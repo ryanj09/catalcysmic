@@ -1,0 +1,108 @@
+{
+	"V_ DW UMa":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"V_ DW UMa",
+		"sources":[
+			{
+				"name":"2018yCat.1345....0G",
+				"bibcode":"2018yCat.1345....0G",
+				"reference":"Gaia Collaboration (2018)",
+				"alias":"1"
+			},
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"2"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"3"
+			},
+			{
+				"name":"SIMBAD astronomical database",
+				"bibcode":"2000A&AS..143....9W",
+				"reference":"Wenger et al. (2000)",
+				"secondary":true,
+				"url":"http://simbad.u-strasbg.fr/",
+				"alias":"4"
+			}
+		],
+		"alias":[
+			{
+				"value":"V_ DW UMa",
+				"source":"4"
+			},
+			{
+				"value":"GSC 03822-00464",
+				"source":"4"
+			},
+			{
+				"value":"GUVV J103352.8+584655.1",
+				"source":"4"
+			},
+			{
+				"value":"LINEAR 22787343",
+				"source":"4"
+			},
+			{
+				"value":"2MASS J10335283+5846547",
+				"source":"4"
+			},
+			{
+				"value":"PG 1030+590",
+				"source":"4"
+			},
+			{
+				"value":"PG 1030+59",
+				"source":"4"
+			},
+			{
+				"value":"SBSS 1030+590",
+				"source":"4"
+			},
+			{
+				"value":"SDSSJ103352.86+584654.7",
+				"source":"4"
+			},
+			{
+				"value":"2XMM J103352.8+584654",
+				"source":"4"
+			},
+			{
+				"value":"AAVSO 1027+59",
+				"source":"4"
+			},
+			{
+				"value":"Gaiadr2 855119196836523008",
+				"source":"4"
+			}
+		],
+		"dec":[
+			{
+				"value":"+58:46:54.719",
+				"u_value":"degrees",
+				"source":"1,4"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.0083",
+				"derived":true,
+				"e_value":"0.0006",
+				"source":"2,3"
+			}
+		],
+		"ra":[
+			{
+				"value":"10:33:52.8751",
+				"u_value":"hours",
+				"source":"1,4"
+			}
+		]
+	}
+}

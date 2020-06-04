@@ -34,6 +34,7 @@ class CATACLYSMIC(ENTRY):
     MAX_VISUAL_DATE = Key('maxvisualdate',
                           KEY_TYPES.STRING,
                           replace_better=True)
+    VISUAL_MAG = Key('visualmag', KEY_TYPES.NUMERIC)
     ERRORS = Key('errors')
 
 
@@ -125,8 +126,8 @@ class Cataclysmic(Entry):
             kinds = list(filter(lambda x: x != 'host', kinds))
         elif key == self._KEYS.CLAIMED_TYPE:
             isq = False
-            if value.startswith('SN '):
-                value = value.replace('SN ', '', 1)
+            if value.startswith('CV '):
+                value = value.replace('CV ', '', 1)
             value = value.replace('young', '')
             if '?' in value:
                 isq = True
@@ -319,7 +320,7 @@ class Cataclysmic(Entry):
             if quantity == self._KEYS.ALIAS:
                 for alias in self.get(quantity, []):
                     cleaned_value = alias[QUANTITY.VALUE]
-                    if (cleaned_value.startswith('SN') and
+                    if (cleaned_value.startswith('CV') and
                             is_integer(cleaned_value[2:6]) and
                             int(cleaned_value[2:6]) >= 2016):
                         success = super(Cataclysmic, self).add_quantity(
@@ -385,7 +386,7 @@ class Cataclysmic(Entry):
     def priority_prefixes(self):
         """Prefixes to given priority to when merging duplicate entries.
         """
-        return ('AT', 'SN')
+        return ('AT', 'CV')
 
     def add_self_source(self):
         return self.add_source(
@@ -875,13 +876,13 @@ class Cataclysmic(Entry):
             return name
         # If the name is already in the form 'SN####AA' then keep using
         # that
-        if (name.startswith('SN') and
+        if (name.startswith('CV') and
             ((is_number(name[2:6]) and not is_number(name[6:])) or
              (is_number(name[2:5]) and not is_number(name[5:])))):
             return name
         # If one of the aliases is in the form 'SN####AA' then use that
         for alias in aliases:
-            if (alias.startswith('SN') and
+            if (alias.startswith('CV') and
                 ((is_number(alias[2:6]) and not is_number(alias[6:])) or
                  (is_number(alias[2:5]) and not is_number(alias[5:])))):
                 newname = alias

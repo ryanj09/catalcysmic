@@ -1,0 +1,29 @@
+{
+	"ASASSN-14kg":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"ASASSN-14kg",
+		"sources":[
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"1"
+			}
+		],
+		"alias":[
+			{
+				"value":"ASASSN-14kg",
+				"source":"1"
+			}
+		],
+		"discoverdate":[
+			{
+				"value":"2014",
+				"derived":true,
+				"source":"1"
+			}
+		]
+	}
+}

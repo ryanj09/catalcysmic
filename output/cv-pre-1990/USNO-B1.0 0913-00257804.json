@@ -1,0 +1,76 @@
+{
+	"USNO-B1.0 0913-00257804":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"USNO-B1.0 0913-00257804",
+		"sources":[
+			{
+				"name":"2018yCat.1345....0G",
+				"bibcode":"2018yCat.1345....0G",
+				"reference":"Gaia Collaboration (2018)",
+				"alias":"1"
+			},
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"2"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"3"
+			},
+			{
+				"name":"SIMBAD astronomical database",
+				"bibcode":"2000A&AS..143....9W",
+				"reference":"Wenger et al. (2000)",
+				"secondary":true,
+				"url":"http://simbad.u-strasbg.fr/",
+				"alias":"4"
+			}
+		],
+		"alias":[
+			{
+				"value":"USNO-B1.0 0913-00257804",
+				"source":"4"
+			},
+			{
+				"value":"CRTS J161304.4+012125",
+				"source":"4"
+			},
+			{
+				"value":"ROTSE3 J161304.4+012124.4",
+				"source":"4"
+			},
+			{
+				"value":"Gaiadr2 4411845455048263680",
+				"source":"4"
+			}
+		],
+		"dec":[
+			{
+				"value":"+01:21:24.156",
+				"u_value":"degrees",
+				"source":"1,4"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.084",
+				"derived":true,
+				"e_value":"0.0027",
+				"source":"2,3"
+			}
+		],
+		"ra":[
+			{
+				"value":"16:13:04.3851",
+				"u_value":"hours",
+				"source":"1,4"
+			}
+		]
+	}
+}

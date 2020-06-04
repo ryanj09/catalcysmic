@@ -1,0 +1,160 @@
+{
+	"V_ AM CVn":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"V_ AM CVn",
+		"sources":[
+			{
+				"name":"2018yCat.1345....0G",
+				"bibcode":"2018yCat.1345....0G",
+				"reference":"Gaia Collaboration (2018)",
+				"alias":"1"
+			},
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"2"
+			},
+			{
+				"name":"1966ApJ...144..496G",
+				"bibcode":"1966ApJ...144..496G",
+				"reference":"Greenstein (1966)",
+				"alias":"3"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"4"
+			},
+			{
+				"name":"SIMBAD astronomical database",
+				"bibcode":"2000A&AS..143....9W",
+				"reference":"Wenger et al. (2000)",
+				"secondary":true,
+				"url":"http://simbad.u-strasbg.fr/",
+				"alias":"5"
+			}
+		],
+		"alias":[
+			{
+				"value":"V_ AM CVn",
+				"source":"5"
+			},
+			{
+				"value":"CBS 354",
+				"source":"5"
+			},
+			{
+				"value":"CSI+37-12324",
+				"source":"5"
+			},
+			{
+				"value":"EGGR 91",
+				"source":"5"
+			},
+			{
+				"value":"FBS B 91",
+				"source":"5"
+			},
+			{
+				"value":"FBS 1232+379",
+				"source":"5"
+			},
+			{
+				"value":"GEN# +6.20020091",
+				"source":"5"
+			},
+			{
+				"value":"GSC 03018-02523",
+				"source":"5"
+			},
+			{
+				"value":"HZ 29",
+				"source":"5"
+			},
+			{
+				"value":"2MASS J12345460+3737440",
+				"source":"5"
+			},
+			{
+				"value":"PG 1232+379",
+				"source":"5"
+			},
+			{
+				"value":"PLX 2900.02",
+				"source":"5"
+			},
+			{
+				"value":"PM J12349+3737",
+				"source":"5"
+			},
+			{
+				"value":"SDSSJ123454.63+373744.2",
+				"source":"5"
+			},
+			{
+				"value":"UBV 11300",
+				"source":"5"
+			},
+			{
+				"value":"UCAC2 45005054",
+				"source":"5"
+			},
+			{
+				"value":"UCAC4 639-046599",
+				"source":"5"
+			},
+			{
+				"value":"uvby98 620020091 V",
+				"source":"5"
+			},
+			{
+				"value":"WD 1232+37",
+				"source":"5"
+			},
+			{
+				"value":"2XMM J123454.6+373743",
+				"source":"5"
+			},
+			{
+				"value":"AAVSO 1229+38",
+				"source":"5"
+			},
+			{
+				"value":"Gaiadr2 1519860699806445184",
+				"source":"5"
+			}
+		],
+		"claimedtype":[
+			{
+				"value":"DBnnp",
+				"source":"3,5"
+			}
+		],
+		"dec":[
+			{
+				"value":"+37:37:44.120",
+				"u_value":"degrees",
+				"source":"1,5"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.0143",
+				"derived":true,
+				"e_value":"0.0006",
+				"source":"2,4"
+			}
+		],
+		"ra":[
+			{
+				"value":"12:34:54.6230",
+				"u_value":"hours",
+				"source":"1,5"
+			}
+		]
+	}
+}

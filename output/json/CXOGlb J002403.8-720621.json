@@ -1,0 +1,68 @@
+{
+	"CXOGlb J002403.8-720621":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"CXOGlb J002403.8-720621",
+		"sources":[
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"1"
+			},
+			{
+				"name":"2005ApJ...625..796H",
+				"bibcode":"2005ApJ...625..796H",
+				"reference":"Heinke et al. (2005)",
+				"alias":"2"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"3"
+			},
+			{
+				"name":"SIMBAD astronomical database",
+				"bibcode":"2000A&AS..143....9W",
+				"reference":"Wenger et al. (2000)",
+				"secondary":true,
+				"url":"http://simbad.u-strasbg.fr/",
+				"alias":"4"
+			}
+		],
+		"alias":[
+			{
+				"value":"CXOGlb J002403.8-720621",
+				"source":"4"
+			},
+			{
+				"value":"W122",
+				"source":"4"
+			}
+		],
+		"dec":[
+			{
+				"value":"-72:06:21.61",
+				"u_value":"degrees",
+				"source":"2,4"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.0274",
+				"derived":true,
+				"e_value":"0.0004",
+				"source":"1,3"
+			}
+		],
+		"ra":[
+			{
+				"value":"00:24:03.835",
+				"u_value":"hours",
+				"source":"2,4"
+			}
+		]
+	}
+}

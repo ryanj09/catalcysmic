@@ -18,7 +18,7 @@ events = OrderedDict()
 
 warnings.filterwarnings('ignore')
 
-outdir = "astrocats/supernovae/output/"
+outdir = "astrocats/cataclysmic/output/"
 
 files = repo_file_list(bones=False)
 

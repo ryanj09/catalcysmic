@@ -1,0 +1,51 @@
+language: python
+python:
+    - "3.4"
+    - "3.6"
+notifications:
+    email:
+        on_failure: change
+        on_success: change
+    slack: astrochats:tV2KNwL9jXSGSv5KhulGNVro
+git:
+    depth: 3
+
+# Setup anaconda
+before_install:
+# Install packages
+    - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+    - bash miniconda.sh -b -p $HOME/miniconda
+    - export PATH="$HOME/miniconda/bin:$PATH"
+    - hash -r
+    - conda config --set always_yes yes --set changeps1 no
+    - conda update -q conda
+install:
+    - conda install --yes python=$TRAVIS_PYTHON_VERSION matplotlib scipy
+    - conda install -c anaconda pyqt
+    - pip install -r requirements.txt
+    - pip install coveralls
+
+# Run test
+script:
+    - cd ..
+    - git clone --depth=1 https://github.com/astrocatalogs/astrocats.git
+    - cd astrocats
+    - pip install -r requirements.txt
+    - mv ../supernovae astrocats/.
+    - python -m astrocats setup
+
+    - echo "travis_fold:start:IMPORT Importing data"
+    - coverage run --source astrocats/supernovae -a -m astrocats supernovae import --clone-depth 0 --purge-outputs --travis
+    - echo "travis_fold:end:IMPORT Importing data done"
+
+    - echo "travis_fold:start:COUNT Counting data"
+    - python -m astrocats supernovae analyze -v --count
+    - echo "travis_fold:end:COUNT Counting data done"
+
+    - echo "travis_fold:start:WEBCAT Creating web catalog"
+    - coverage run --source astrocats/supernovae -a -m astrocats.scripts.webcat -c sne --travis
+    - echo "travis_fold:end:WEBCAT Web catalog created"
+
+# Run coveralls
+after_success:
+    coveralls

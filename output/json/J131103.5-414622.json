@@ -1,0 +1,62 @@
+{
+	"J131103.5-414622":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"J131103.5-414622",
+		"sources":[
+			{
+				"name":"CRTS",
+				"bibcode":"2014MNRAS.441.1186D",
+				"reference":"Drake et al. (2014)",
+				"alias":"1"
+			},
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"2"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"3"
+			}
+		],
+		"alias":[
+			{
+				"value":"J131103.5-414622",
+				"source":"1"
+			}
+		],
+		"dec":[
+			{
+				"value":"-41:46:22.0",
+				"u_value":"degrees",
+				"source":"1"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.102",
+				"derived":true,
+				"e_value":"0.0019",
+				"source":"2,3"
+			}
+		],
+		"ra":[
+			{
+				"value":"13:11:03.53",
+				"u_value":"hours",
+				"source":"1"
+			}
+		],
+		"visualmag":[
+			{
+				"value":"13.6",
+				"source":"1"
+			}
+		]
+	}
+}

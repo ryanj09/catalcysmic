@@ -63,3 +63,25 @@ where above we run the script that generates the web-based supernova catalog. So
 python -m astrocats.supernovae.scripts.histograms
 ```
 # cataclysmic
+Constructed by Ryan Jackim
+
+First run the import function described below to gather data from all the catalogues. If you want to know what catalogues are being called, in the cataclysmic folder, there is a folder called inputs. In inputs there is a folder called tasks.json That is where the catalog list is located. The code is outdated and work needs to be done to make sure this works properly.
+
+```shell
+python -m astrocats cataclysmic import
+```
+
+If you wish to add a catalog, you must first add an entry in cataclysmic/tasks folder. You will have to make a way of importing the data in yourself but the key functions you will need to add to the list is: catalog.entries[name].add_quantity( 
+
+Look at other files as examples on how to create your own task. After the tasks have been created, you will need to add your new catalog to the tasks file in cataclysmic/input/tasks.json
+
+Some necessary folders do not exist in the original git hub version and you will need to create them. Examples are, cataclysmic/input/cv-external, and cataclysmic/output/cv-2004-1991 and cataclysmic/output/cv-pre-1990
+
+After the import function is created, you will need to use the scripts to develop the cataloge. These scripts are located outside the cataclysmic folder in a folder titled scripts. However, there are scripts specific to each individual catalog within the cataclysmic folder, cataclysmic/scripts. cataclysmic/scripts/generate-web.sh Will run the generation process, but some edits may need to be in order to prevent catalogue spcific scripts from running on the wrong catalog. The following script generates a test of the catalog in a json file.
+
+```shell
+python -m astrocats.cataclysmic.scripts.webcat -c cv -te
+```
+The above script will output a json catalog in cataclysmic/output/catalog.json.test If you are making your own catalog, you must add in the attribute of your catalogue at the end of -c into each of the python script folders listed to be run in cataclysmic/scripts/generate-web.sh under the lines that say elif args.catalog == 'sne':, copy the existing examples and adjust them to fit your catalog.
+
+Code is extremely out of date, expect compatability issues

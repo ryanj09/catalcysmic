@@ -1,0 +1,92 @@
+{
+	"M31PSS":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"M31PSS",
+		"sources":[
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"1"
+			},
+			{
+				"name":"2005A&A...434..483P",
+				"bibcode":"2005A&A...434..483P",
+				"reference":"Pietsch, Freyberg, & Haberl (2005)",
+				"alias":"2"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"3"
+			},
+			{
+				"name":"SIMBAD astronomical database",
+				"bibcode":"2000A&AS..143....9W",
+				"reference":"Wenger et al. (2000)",
+				"secondary":true,
+				"url":"http://simbad.u-strasbg.fr/",
+				"alias":"4"
+			}
+		],
+		"alias":[
+			{
+				"value":"M31PSS",
+				"source":"4"
+			},
+			{
+				"value":"M 31 periodic supersoft",
+				"source":"4"
+			},
+			{
+				"value":"2XMM J004319.4+411756",
+				"source":"4"
+			},
+			{
+				"value":"XMMM31 J004319.5+411756",
+				"source":"4"
+			},
+			{
+				"value":"XMMU J004319.4+411759",
+				"source":"4"
+			},
+			{
+				"value":"XMMU J004319.4+411758",
+				"source":"4"
+			},
+			{
+				"value":"r3-126",
+				"source":"4"
+			},
+			{
+				"value":"SSS:11",
+				"source":"4"
+			}
+		],
+		"dec":[
+			{
+				"value":"+41:17:56.9",
+				"u_value":"degrees",
+				"source":"2,4"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.4075",
+				"derived":true,
+				"e_value":"0.0667",
+				"source":"1,3"
+			}
+		],
+		"ra":[
+			{
+				"value":"00:43:19.59",
+				"u_value":"hours",
+				"source":"2,4"
+			}
+		]
+	}
+}

@@ -1,0 +1,52 @@
+{
+	"PSN J01585369+0535254":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"PSN J01585369+0535254",
+		"sources":[
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"1"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"2"
+			}
+		],
+		"alias":[
+			{
+				"value":"PSN J01585369+0535254",
+				"source":"2"
+			}
+		],
+		"dec":[
+			{
+				"value":"+05:35:25.4",
+				"derived":true,
+				"u_value":"degrees",
+				"source":"2"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.0349",
+				"derived":true,
+				"e_value":"0.0005",
+				"source":"1,2"
+			}
+		],
+		"ra":[
+			{
+				"value":"01:58:53.69",
+				"derived":true,
+				"u_value":"hours",
+				"source":"2"
+			}
+		]
+	}
+}

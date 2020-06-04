@@ -1,0 +1,29 @@
+{
+	"ASASSN-13dk":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"ASASSN-13dk",
+		"sources":[
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"1"
+			}
+		],
+		"alias":[
+			{
+				"value":"ASASSN-13dk",
+				"source":"1"
+			}
+		],
+		"discoverdate":[
+			{
+				"value":"2013",
+				"derived":true,
+				"source":"1"
+			}
+		]
+	}
+}

@@ -12,7 +12,7 @@ from astrocats.catalog.utils import jd_to_mjd, pbar_strings
 from astropy.io import fits
 from astropy.time import Time as astrotime
 
-from ..supernova import SUPERNOVA, Supernova
+from astrocats.cataclysmic.cataclysmic import CATACLYSMIC, Cataclysmic
 
 
 def do_external_radio(catalog):
@@ -54,7 +54,7 @@ def do_external_radio(catalog):
                         PHOTOMETRY.SOURCE: source
                     }
                     catalog.entries[name].add_photometry(**photodict)
-                    catalog.entries[name].add_quantity(SUPERNOVA.ALIAS,
+                    catalog.entries[name].add_quantity(CATACLYSMIC.ALIAS,
                                                        oldname, source)
 
     catalog.journal_entries()
@@ -93,7 +93,7 @@ def do_external_xray(catalog):
                         PHOTOMETRY.SOURCE: source
                     }
                     catalog.entries[name].add_photometry(**photodict)
-                    catalog.entries[name].add_quantity(SUPERNOVA.ALIAS,
+                    catalog.entries[name].add_quantity(CATACLYSMIC.ALIAS,
                                                        oldname, source)
 
     catalog.journal_entries()
@@ -218,8 +218,8 @@ def do_internal(catalog):
     catalog.log.debug("found {} files matching '{}'".format(
         len(files), path_pattern))
     for datafile in pbar_strings(files, task_str):
-        new_event = Supernova.init_from_file(
+        new_event = Cataclysmic.init_from_file(
             catalog, path=datafile, clean=True)
-        catalog.entries.update({new_event[SUPERNOVA.NAME]: new_event})
+        catalog.entries.update({new_event[CATACLYSMIC.NAME]: new_event})
 
     return

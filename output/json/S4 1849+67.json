@@ -1,0 +1,22 @@
+{
+	"S4 1849+67":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"S4 1849+67",
+		"sources":[
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"1"
+			}
+		],
+		"alias":[
+			{
+				"value":"S4 1849+67",
+				"source":"1"
+			}
+		]
+	}
+}

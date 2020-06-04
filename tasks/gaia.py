@@ -8,7 +8,7 @@ from astrocats.catalog.utils import jd_to_mjd, pbar
 
 from decimal import Decimal
 
-from ..supernova import SUPERNOVA
+from astrocats.cataclysmic.cataclysmic import CATACLYSMIC
 
 
 def do_gaia(catalog):
@@ -29,30 +29,33 @@ def do_gaia(catalog):
             continue
         name = catalog.add_entry(row[0])
         source = catalog.entries[name].add_source(name=reference, url=refurl)
-        catalog.entries[name].add_quantity(SUPERNOVA.ALIAS, name, source)
+        catalog.entries[name].add_quantity(CATACLYSMIC.ALIAS, name, source)
         year = '20' + re.findall(r'\d+', row[0])[0]
-        catalog.entries[name].add_quantity(SUPERNOVA.DISCOVER_DATE, year,
+        catalog.entries[name].add_quantity(CATACLYSMIC.DISCOVER_DATE, year,
                                            source)
         catalog.entries[name].add_quantity(
-            SUPERNOVA.RA, row[2], source, u_value='floatdegrees')
+            CATACLYSMIC.RA, row[2], source, u_value='floatdegrees')
         catalog.entries[name].add_quantity(
-            SUPERNOVA.DEC, row[3], source, u_value='floatdegrees')
+            CATACLYSMIC.DEC, row[3], source, u_value='floatdegrees')
+        if name == 'Gaia16adj':
+            continue
+        #TODO: ? for cv's
         if row[7] and row[7] != 'unknown':
-            type = row[7].replace('SNe', '').replace('SN', '').strip()
-            catalog.entries[name].add_quantity(SUPERNOVA.CLAIMED_TYPE, type,
+            type = row[7].replace('CV', '').strip()
+            catalog.entries[name].add_quantity(CATACLYSMIC.CLAIMED_TYPE, type,
                                                source)
         elif any([
                 xx in row[9].upper()
-                for xx in ['SN CANDIATE', 'CANDIDATE SN', 'HOSTLESS SN']
+                for xx in ['CV CANDIATE', 'CANDIDATE CV', 'HOSTLESS BLUE TRANSIENT']
         ]):
-            catalog.entries[name].add_quantity(SUPERNOVA.CLAIMED_TYPE,
+            catalog.entries[name].add_quantity(CATACLYSMIC.CLAIMED_TYPE,
                                                'Candidate', source)
 
         if ('aka' in row[9].replace('gakaxy', 'galaxy').lower() and
                 'AKARI' not in row[9]):
             commentsplit = (row[9].replace('_', ' ').replace('MLS ', 'MLS')
-                            .replace('CSS ', 'CSS').replace('SN iPTF', 'iPTF')
-                            .replace('SN ', 'SN').replace('AT ', 'AT'))
+                            .replace('CSS ', 'CSS').replace('CV iPTF', 'iPTF')
+                            .replace('CV ', 'CV').replace('AT ', 'AT'))
             commentsplit = commentsplit.split()
             for csi, cs in enumerate(commentsplit):
                 if 'aka' in cs.lower() and csi < len(commentsplit) - 1:
@@ -61,7 +64,7 @@ def do_gaia(catalog):
                     if alias[:6] == 'ASASSN' and alias[6] != '-':
                         alias = 'ASASSN-' + alias[6:]
                     if alias.lower() != 'master':
-                        catalog.entries[name].add_quantity(SUPERNOVA.ALIAS,
+                        catalog.entries[name].add_quantity(CATACLYSMIC.ALIAS,
                                                            alias, source)
                     break
 

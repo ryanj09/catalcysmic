@@ -1,0 +1,45 @@
+{
+	"CSS151219_101935+390048":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"CSS151219_101935+390048",
+		"sources":[
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"1"
+			}
+		],
+		"alias":[
+			{
+				"value":"CSS151219_101935+390048",
+				"source":"1"
+			}
+		],
+		"dec":[
+			{
+				"value":"+39:00:48",
+				"derived":true,
+				"u_value":"degrees",
+				"source":"1"
+			}
+		],
+		"discoverdate":[
+			{
+				"value":"2015/12/19",
+				"derived":true,
+				"source":"1"
+			}
+		],
+		"ra":[
+			{
+				"value":"15:12:19._101935",
+				"derived":true,
+				"u_value":"hours",
+				"source":"1"
+			}
+		]
+	}
+}

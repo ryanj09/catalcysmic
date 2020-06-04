@@ -1,4 +1,4 @@
-"""Supernovae specific catalog class."""
+"""Cataclysmic variable specific catalog class."""
 import codecs
 import json
 import os
@@ -10,12 +10,12 @@ from astrocats.catalog.catalog import Catalog
 from astrocats.catalog.quantity import QUANTITY
 from astrocats.catalog.utils import read_json_arr, read_json_dict
 
-from .supernova import SUPERNOVA, Supernova
+from .cataclysmic import CATACLYSMIC, Cataclysmic
 from .utils import name_clean
 
 
-class SupernovaCatalog(Catalog):
-    """Catalog class for `Supernova` objects."""
+class CataclysmicCatalog(Catalog):
+    """Catalog class for `Cataclysmic` objects."""
 
     class PATHS(Catalog.PATHS):
         """Paths to catalog inputs/outputs."""
@@ -24,7 +24,7 @@ class SupernovaCatalog(Catalog):
 
         def __init__(self, catalog):
             """Initialize paths."""
-            super(SupernovaCatalog.PATHS, self).__init__(catalog)
+            super(CataclysmicCatalog.PATHS, self).__init__(catalog)
             # auxiliary datafiles
             self.TYPE_SYNONYMS = os.path.join(
                 self.PATH_INPUT, 'type-synonyms.json')
@@ -32,10 +32,10 @@ class SupernovaCatalog(Catalog):
                 self.PATH_INPUT, 'source-synonyms.json')
             self.URL_REDIRECTS = os.path.join(
                 self.PATH_INPUT, 'url-redirects.json')
-            self.NON_SNE_TYPES = os.path.join(
-                self.PATH_INPUT, 'non-sne-types.json')
-            self.NON_SNE_PREFIXES = os.path.join(
-                self.PATH_INPUT, 'non-sne-prefixes.json')
+            self.NON_CV_TYPES = os.path.join(
+                self.PATH_INPUT, 'non-cv-types.json')
+            self.NON_CV_PREFIXES = os.path.join(
+                self.PATH_INPUT, 'non-cv-prefixes.json')
             self.BIBERRORS = os.path.join(self.PATH_INPUT, 'biberrors.json')
             self.ATELS = os.path.join(self.PATH_INPUT, 'atels.json')
             self.CBETS = os.path.join(self.PATH_INPUT, 'cbets.json')
@@ -57,7 +57,7 @@ class SupernovaCatalog(Catalog):
     class SCHEMA(object):
         """Define the HASH/URL associated with the present schema."""
 
-        HASH = (check_output(['git', '-C', 'astrocats/supernovae',
+        HASH = (check_output(['git', '-C', 'astrocats/cataclysmic',
                               'log', '-n', '1', '--format="%h"',
                               '--', 'SCHEMA.md'])
                 .decode('ascii').strip().strip('"').strip())
@@ -67,8 +67,8 @@ class SupernovaCatalog(Catalog):
     def __init__(self, args, log):
         """Initialize catalog."""
         # Initialize super `astrocats.catalog.catalog.Catalog` object
-        super(SupernovaCatalog, self).__init__(args, log)
-        self.proto = Supernova
+        super(CataclysmicCatalog, self).__init__(args, log)
+        self.proto = Cataclysmic
         self._load_aux_data()
         return
 
@@ -78,16 +78,16 @@ class SupernovaCatalog(Catalog):
         An entry would be buried if it does not belong to the class of object
         associated with the given catalog.
         """
-        (bury_entry, save_entry) = super(SupernovaCatalog, self).should_bury(name)
+        (bury_entry, save_entry) = super(CataclysmicCatalog, self).should_bury(name)
 
         ct_val = None
         if name.startswith(tuple(self.nonsneprefixes_dict)):
             self.log.debug(
-                "Killing '{}', non-SNe prefix.".format(name))
+                "Killing '{}', non-CV prefix.".format(name))
             save_entry = False
         else:
-            if SUPERNOVA.CLAIMED_TYPE in self.entries[name]:
-                for ct in self.entries[name][SUPERNOVA.CLAIMED_TYPE]:
+            if CATACLYSMIC.CLAIMED_TYPE in self.entries[name]:
+                for ct in self.entries[name][CATACLYSMIC.CLAIMED_TYPE]:
                     up_val = ct[QUANTITY.VALUE].upper().replace('?', '')
                     up_types = [x.upper() for x in self.nonsnetypes]
                     if up_val not in up_types and up_val != 'CANDIDATE':
@@ -98,17 +98,17 @@ class SupernovaCatalog(Catalog):
                         bury_entry = True
                         ct_val = ct[QUANTITY.VALUE]
             else:
-                if (SUPERNOVA.DISCOVER_DATE in self.entries[name] and
-                    not any([x.get(QUANTITY.VALUE).startswith('SN')
-                             for x in self.entries[name][SUPERNOVA.ALIAS]])):
+                if (CATACLYSMIC.DISCOVER_DATE in self.entries[name] and
+                    not any([x.get(QUANTITY.VALUE).startswith('CV')
+                             for x in self.entries[name][CATACLYSMIC.ALIAS]])):
                     try:
                         try:
                             dd = datetime.strptime(self.entries[name][
-                                SUPERNOVA.DISCOVER_DATE][0].get('value', ''),
+                                CATACLYSMIC.DISCOVER_DATE][0].get('value', ''),
                                 '%Y/%m/%d')
                         except ValueError:
                             dd = datetime.strptime(self.entries[name][
-                                SUPERNOVA.DISCOVER_DATE][0].get('value', '') +
+                                CATACLYSMIC.DISCOVER_DATE][0].get('value', '') +
                                 '/12/31',
                                 '%Y/%m/%d')
                     except ValueError:
@@ -116,6 +116,7 @@ class SupernovaCatalog(Catalog):
                     else:
                         diff = datetime.today() - dd
                         # Because of the TNS, many non-SNe beyond 2016.
+                        # TODO:check if this is true for cv's
                         if dd.year >= 2016 and diff.days > 180:
                             save_entry = False
 
@@ -143,8 +144,8 @@ class SupernovaCatalog(Catalog):
         self.type_syns = read_json_dict(self.PATHS.TYPE_SYNONYMS)
         # Create/Load auxiliary arrays
         self.nonsneprefixes_dict = read_json_arr(
-            self.PATHS.NON_SNE_PREFIXES)
-        self.nonsnetypes = read_json_arr(self.PATHS.NON_SNE_TYPES)
+            self.PATHS.NON_CV_PREFIXES)
+        self.nonsnetypes = read_json_arr(self.PATHS.NON_CV_TYPES)
         return
 
     def save_caches(self):

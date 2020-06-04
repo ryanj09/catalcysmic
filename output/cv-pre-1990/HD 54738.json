@@ -1,0 +1,66 @@
+{
+	"HD 54738":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"HD 54738",
+		"sources":[
+			{
+				"name":"1999MSS...C05....0H",
+				"bibcode":"1999MSS...C05....0H",
+				"reference":"Houk & Swift (1999)",
+				"alias":"1"
+			},
+			{
+				"name":"SIMBAD astronomical database",
+				"bibcode":"2000A&AS..143....9W",
+				"reference":"Wenger et al. (2000)",
+				"secondary":true,
+				"url":"http://simbad.u-strasbg.fr/",
+				"alias":"2"
+			}
+		],
+		"alias":[
+			{
+				"value":"HD 54738",
+				"source":"2"
+			},
+			{
+				"value":"__ J 57AB",
+				"source":"2"
+			},
+			{
+				"value":"ADS 5838 AB",
+				"source":"2"
+			},
+			{
+				"value":"BD+03 1577",
+				"source":"2"
+			},
+			{
+				"value":"CCDM J07101+0255AB",
+				"source":"2"
+			},
+			{
+				"value":"CSI+03 1577 1",
+				"source":"2"
+			},
+			{
+				"value":"IDS 07048+0304 AB",
+				"source":"2"
+			},
+			{
+				"value":"NSV 3432",
+				"source":"2"
+			},
+			{
+				"value":"WDS J07100+0254AB",
+				"source":"2"
+			}
+		],
+		"claimedtype":[
+			{
+				"value":"B8/9V",
+				"source":"1,2"
+			}
+		]
+	}
+}

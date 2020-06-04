@@ -182,4 +182,4 @@ Online catalogs:
 * Any SNe with a typing but no spectrum likely has a spectrum somewhere.
 
 #### Known errors that need to be corrected:
-* No known errors at this time.
+* Code is out of date.

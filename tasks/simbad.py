@@ -5,7 +5,7 @@ import re
 from astroquery.simbad import Simbad
 
 from astrocats.catalog.utils import is_number, pbar, single_spaces, uniq_cdl
-from ..supernova import SUPERNOVA
+from astrocats.cataclysmic.cataclysmic import CATACLYSMIC
 from ..utils import name_clean
 
 
@@ -21,7 +21,7 @@ def do_simbad(catalog):
                         '2015ApJ...807L..18N']
     simbadbadnamebib = ['2004AJ....127.2809W', '2005MNRAS.364.1419Z',
                         '2015A&A...574A.112D', '2011MNRAS.417..916G',
-                        '2002ApJ...566..880G']
+                        '2002ApJ...566..880G','url:TNS']
     simbadbannedcats = ['[TBV2008]', 'OGLE-MBR']
     simbadbannednames = ['SN']
     customSimbad = Simbad()
@@ -33,7 +33,7 @@ def do_simbad(catalog):
     for mirror in simbadmirrors:
         customSimbad.SIMBAD_URL = mirror
         try:
-            table = customSimbad.query_criteria('maintype=SN | maintype="SN?"')
+            table = customSimbad.query_criteria('maintype=CV* | maintype="CV?"')
         except Exception:
             continue
         else:
@@ -50,7 +50,7 @@ def do_simbad(catalog):
                          str(brow[x])) for x in brow.colnames}
         # Skip items with no bibliographic info aside from SIMBAD, too
         # error-prone
-        if row['OTYPE'] == 'Candidate_SN*' and not row['SP_TYPE']:
+        if row['OTYPE'] == 'Candidate_CV*' and not row['SP_TYPE']:
             continue
         if (not row['COO_BIBCODE'] and not row['SP_BIBCODE'] and
                 not row['SP_BIBCODE_2']):
@@ -59,7 +59,7 @@ def do_simbad(catalog):
             continue
         if row['COO_BIBCODE'] and row['COO_BIBCODE'] in simbadbadnamebib:
             continue
-        name = single_spaces(re.sub(r'\[[^)]*\]', '', row['MAIN_ID']).strip())
+        name = single_spaces(re.sub(r'\[[^)]*\]', '', row['MAIN_ID']).strip()).replace('*','_')
         if name in simbadbannednames:
             continue
         if is_number(name.replace(' ', '')):
@@ -69,26 +69,26 @@ def do_simbad(catalog):
                   .add_source(name='SIMBAD astronomical database',
                               bibcode="2000A&AS..143....9W",
                               url="http://simbad.u-strasbg.fr/",
-                              secondary=True))
+                              secondary=True)).replace('*','_')
         aliases = row['ID'].split(',')
         for alias in aliases:
             if any([x in alias for x in simbadbannedcats]):
                 continue
-            ali = single_spaces(re.sub(r'\[[^)]*\]', '', alias).strip())
+            ali = single_spaces(re.sub(r'\[[^)]*\]', '', alias).strip()).replace('*','_')
             if is_number(ali.replace(' ', '')):
                 continue
             if ali in simbadbannednames:
                 continue
             ali = name_clean(ali)
-            catalog.entries[name].add_quantity(SUPERNOVA.ALIAS,
+            catalog.entries[name].add_quantity(CATACLYSMIC.ALIAS,
                                                ali, source)
         if row['COO_BIBCODE'] and row['COO_BIBCODE'] not in simbadbadcoordbib:
             csources = ','.join(
                 [source, catalog.entries[name].add_source(
                     bibcode=row['COO_BIBCODE'])])
-            catalog.entries[name].add_quantity(SUPERNOVA.RA,
+            catalog.entries[name].add_quantity(CATACLYSMIC.RA,
                                                row['RA'], csources)
-            catalog.entries[name].add_quantity(SUPERNOVA.DEC,
+            catalog.entries[name].add_quantity(CATACLYSMIC.DEC,
                                                row['DEC'], csources)
         if row['SP_BIBCODE'] and row['SP_BIBCODE'] not in simbadbadtypebib:
             ssources = uniq_cdl([source,
@@ -98,10 +98,10 @@ def do_simbad(catalog):
                                   .add_source(bibcode=row['SP_BIBCODE_2'])] if
                                  row['SP_BIBCODE_2'] else []))
             catalog.entries[name].add_quantity(
-                SUPERNOVA.CLAIMED_TYPE,
+                CATACLYSMIC.CLAIMED_TYPE,
                 (row['SP_TYPE']
-                 .replace('SN.', '')
-                 .replace('SN', '')
+                 .replace('CV.', '')
+                 .replace('CV', '')
                  .replace('(~)', '')
                  .strip(': ')), ssources)
     catalog.journal_entries()

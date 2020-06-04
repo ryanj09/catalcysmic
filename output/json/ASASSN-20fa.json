@@ -1,0 +1,67 @@
+{
+	"ASASSN-20fa":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"ASASSN-20fa",
+		"sources":[
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"1"
+			},
+			{
+				"name":"ASAS-SN Transients",
+				"url":"http://www.astronomy.ohio-state.edu/~assassin/transients.html",
+				"alias":"2"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"3"
+			}
+		],
+		"alias":[
+			{
+				"value":"ASASSN-20fa",
+				"source":"2"
+			}
+		],
+		"dec":[
+			{
+				"value":"-10:26:51.4",
+				"u_value":"floatdegrees",
+				"source":"2"
+			}
+		],
+		"discoverdate":[
+			{
+				"value":"2020/05/16.05",
+				"source":"2"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.2155",
+				"derived":true,
+				"e_value":"0.0066",
+				"source":"1,3"
+			}
+		],
+		"ra":[
+			{
+				"value":"19:18:24.23",
+				"u_value":"floatdegrees",
+				"source":"2"
+			}
+		],
+		"visualmag":[
+			{
+				"value":"16.44",
+				"source":"2"
+			}
+		]
+	}
+}

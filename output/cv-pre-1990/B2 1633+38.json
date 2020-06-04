@@ -1,0 +1,22 @@
+{
+	"B2 1633+38":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"B2 1633+38",
+		"sources":[
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"1"
+			}
+		],
+		"alias":[
+			{
+				"value":"B2 1633+38",
+				"source":"1"
+			}
+		]
+	}
+}

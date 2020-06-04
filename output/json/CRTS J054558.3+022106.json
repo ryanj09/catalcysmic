@@ -1,0 +1,83 @@
+{
+	"CRTS J054558.3+022106":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"CRTS J054558.3+022106",
+		"sources":[
+			{
+				"name":"2012AJ....144...81T",
+				"bibcode":"2012AJ....144...81T",
+				"reference":"Thorstensen & Skinner (2012)",
+				"alias":"1"
+			},
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"2"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"3"
+			},
+			{
+				"name":"SIMBAD astronomical database",
+				"bibcode":"2000A&AS..143....9W",
+				"reference":"Wenger et al. (2000)",
+				"secondary":true,
+				"url":"http://simbad.u-strasbg.fr/",
+				"alias":"4"
+			}
+		],
+		"alias":[
+			{
+				"value":"CRTS J054558.3+022106",
+				"source":"4"
+			},
+			{
+				"value":"PN TE 11",
+				"source":"4"
+			},
+			{
+				"value":"CSS111003:054558+022106",
+				"source":"4"
+			},
+			{
+				"value":"PN G203.1-13.4",
+				"source":"4"
+			}
+		],
+		"dec":[
+			{
+				"value":"+02:21:06.0",
+				"u_value":"degrees",
+				"source":"1,4"
+			}
+		],
+		"discoverdate":[
+			{
+				"value":"2011/10/03",
+				"derived":true,
+				"source":"3"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.4701",
+				"derived":true,
+				"e_value":"0.0234",
+				"source":"2,3"
+			}
+		],
+		"ra":[
+			{
+				"value":"05:45:58.00",
+				"u_value":"hours",
+				"source":"1,4"
+			}
+		]
+	}
+}

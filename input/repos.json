@@ -1,29 +1,28 @@
 {
     "output":[
-        "sne-pre-1990",
-        "sne-1990-1999",
-        "sne-2000-2004",
-        "sne-2005-2009",
-        "sne-2010-2014",
-        "sne-2015-2019"
+        "cv-pre-1990",
+        "cv-1990-1999",
+        "cv-2000-2004",
+        "cv-2005-2009",
+        "cv-2010-2014",
+        "cv-2015-2019"
     ],
     "boneyard":[
-        "sne-boneyard"
+        "cv-boneyard"
     ],
     "external":[
-        "sne-external",
-        "sne-external-radio",
-        "sne-external-WISEREP",
-        "sne-external-xray",
-        "sne-external-spectra",
-        "sne-external-fits-spectra",
-        "sne-external-models"
+        "cv-external",
+        "cv-external-radio",
+        "cv-external-xray",
+        "cv-external-spectra",
+        "cv-external-fits-spectra",
+        "cv-external-models"
     ],
     "private":[
         "sne-private-iair-arcavi",
         "sne-private-matt-nicholl"
     ],
     "internal":[
-        "sne-internal"
+        "cv-internal"
     ]
 }

@@ -1,0 +1,135 @@
+{
+	"V_ V1239 Her":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"V_ V1239 Her",
+		"sources":[
+			{
+				"name":"2018yCat.1345....0G",
+				"bibcode":"2018yCat.1345....0G",
+				"reference":"Gaia Collaboration (2018)",
+				"alias":"1"
+			},
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"2"
+			},
+			{
+				"name":"2004AJ....128.1882S",
+				"bibcode":"2004AJ....128.1882S",
+				"reference":"Szkody et al. (2004)",
+				"alias":"3"
+			},
+			{
+				"name":"ASAS-SN Transients",
+				"url":"http://www.astronomy.ohio-state.edu/~assassin/transients.html",
+				"alias":"4"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"5"
+			},
+			{
+				"name":"SIMBAD astronomical database",
+				"bibcode":"2000A&AS..143....9W",
+				"reference":"Wenger et al. (2000)",
+				"secondary":true,
+				"url":"http://simbad.u-strasbg.fr/",
+				"alias":"6"
+			}
+		],
+		"alias":[
+			{
+				"value":"V_ V1239 Her",
+				"source":"4,6"
+			},
+			{
+				"value":"LAMOST J170213.25+322954.1",
+				"source":"6"
+			},
+			{
+				"value":"2MASS J17021325+3229542",
+				"source":"6"
+			},
+			{
+				"value":"SDSSJ170213.25+322954.1",
+				"source":"6"
+			},
+			{
+				"value":"SDSSJ170213.26+322954.1",
+				"source":"6"
+			},
+			{
+				"value":"SDSSJ170213.24+322954.1",
+				"source":"6"
+			},
+			{
+				"value":"SDSSJ170213.24+322954.2",
+				"source":"6"
+			},
+			{
+				"value":"SDSSJ170213.25+322954.2",
+				"source":"6"
+			},
+			{
+				"value":"Gaiadr2 1313538545446290688",
+				"source":"6"
+			}
+		],
+		"claimedtype":[
+			{
+				"value":"M1.5e",
+				"source":"3,6"
+			}
+		],
+		"dec":[
+			{
+				"value":"+32:29:54.158",
+				"u_value":"degrees",
+				"source":"1,6"
+			},
+			{
+				"value":"32:29:53.6",
+				"u_value":"floatdegrees",
+				"source":"4"
+			}
+		],
+		"discoverdate":[
+			{
+				"value":"2013/09/28.22",
+				"source":"4"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.0203",
+				"derived":true,
+				"e_value":"0.0006",
+				"source":"2,5"
+			}
+		],
+		"ra":[
+			{
+				"value":"17:02:13.2466",
+				"u_value":"hours",
+				"source":"1,6"
+			},
+			{
+				"value":"17:2:13.29",
+				"u_value":"floatdegrees",
+				"source":"4"
+			}
+		],
+		"visualmag":[
+			{
+				"value":"14.5",
+				"source":"4"
+			}
+		]
+	}
+}

@@ -1,0 +1,76 @@
+{
+	"V_ DV Sco":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"V_ DV Sco",
+		"sources":[
+			{
+				"name":"2018yCat.1345....0G",
+				"bibcode":"2018yCat.1345....0G",
+				"reference":"Gaia Collaboration (2018)",
+				"alias":"1"
+			},
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"2"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"3"
+			},
+			{
+				"name":"SIMBAD astronomical database",
+				"bibcode":"2000A&AS..143....9W",
+				"reference":"Wenger et al. (2000)",
+				"secondary":true,
+				"url":"http://simbad.u-strasbg.fr/",
+				"alias":"4"
+			}
+		],
+		"alias":[
+			{
+				"value":"V_ DV Sco",
+				"source":"4"
+			},
+			{
+				"value":"2MASS J16502789-2807583",
+				"source":"4"
+			},
+			{
+				"value":"SV_ HV 4225",
+				"source":"4"
+			},
+			{
+				"value":"Gaiadr2 6033070058836761088",
+				"source":"4"
+			}
+		],
+		"dec":[
+			{
+				"value":"-28:07:58.361",
+				"u_value":"degrees",
+				"source":"1,4"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.2759",
+				"derived":true,
+				"e_value":"0.014",
+				"source":"2,3"
+			}
+		],
+		"ra":[
+			{
+				"value":"16:50:27.9023",
+				"u_value":"hours",
+				"source":"1,4"
+			}
+		]
+	}
+}

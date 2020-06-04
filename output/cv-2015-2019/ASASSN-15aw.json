@@ -1,0 +1,103 @@
+{
+	"ASASSN-15aw":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"ASASSN-15aw",
+		"sources":[
+			{
+				"name":"2018yCat.1345....0G",
+				"bibcode":"2018yCat.1345....0G",
+				"reference":"Gaia Collaboration (2018)",
+				"alias":"1"
+			},
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"2"
+			},
+			{
+				"name":"ASAS-SN Transients",
+				"url":"http://www.astronomy.ohio-state.edu/~assassin/transients.html",
+				"alias":"3"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"4"
+			},
+			{
+				"name":"SIMBAD astronomical database",
+				"bibcode":"2000A&AS..143....9W",
+				"reference":"Wenger et al. (2000)",
+				"secondary":true,
+				"url":"http://simbad.u-strasbg.fr/",
+				"alias":"5"
+			}
+		],
+		"alias":[
+			{
+				"value":"ASASSN-15aw",
+				"source":"3,5"
+			},
+			{
+				"value":"MASTER OT J015746.16+511023.2",
+				"source":"5"
+			},
+			{
+				"value":"USNO-B1.0 1411-00052176",
+				"source":"5"
+			},
+			{
+				"value":"Gaiadr2 359302331032532352",
+				"source":"5"
+			}
+		],
+		"dec":[
+			{
+				"value":"+51:10:24.003",
+				"u_value":"degrees",
+				"source":"1,5"
+			},
+			{
+				"value":"51:10:24.6",
+				"u_value":"floatdegrees",
+				"source":"3"
+			}
+		],
+		"discoverdate":[
+			{
+				"value":"2015/01/15.26",
+				"source":"3"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.2382",
+				"derived":true,
+				"e_value":"0.0223",
+				"source":"2,4"
+			}
+		],
+		"ra":[
+			{
+				"value":"01:57:46.1492",
+				"u_value":"hours",
+				"source":"1,5"
+			},
+			{
+				"value":"1:57:46.34",
+				"u_value":"floatdegrees",
+				"source":"3"
+			}
+		],
+		"visualmag":[
+			{
+				"value":"15.87",
+				"source":"3"
+			}
+		]
+	}
+}

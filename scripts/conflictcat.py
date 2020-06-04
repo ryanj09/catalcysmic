@@ -9,13 +9,13 @@ from astropy.coordinates import SkyCoord as coord
 from tqdm import tqdm
 
 from astrocats.catalog.utils import round_sig
-from astrocats.supernovae.scripts.repos import repo_file_list
+from astrocats.cataclysmic.scripts.repos import repo_file_list
 
 from ...catalog.utils import get_entry_filename
 
 conflicts = []
 
-outdir = "astrocats/supernovae/output/"
+outdir = "astrocats/cataclysmic/output/"
 
 files = repo_file_list(bones=False)
 

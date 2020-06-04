@@ -1,0 +1,67 @@
+{
+	"CSS111124_072144+663838":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"CSS111124_072144+663838",
+		"sources":[
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"1"
+			},
+			{
+				"name":"ASAS-SN Transients",
+				"url":"http://www.astronomy.ohio-state.edu/~assassin/transients.html",
+				"alias":"2"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"3"
+			}
+		],
+		"alias":[
+			{
+				"value":"CSS111124_072144+663838",
+				"source":"2"
+			}
+		],
+		"dec":[
+			{
+				"value":"66:38:37.2",
+				"u_value":"floatdegrees",
+				"source":"2"
+			}
+		],
+		"discoverdate":[
+			{
+				"value":"2013/10/4.53",
+				"source":"2"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.038",
+				"derived":true,
+				"e_value":"0.0007",
+				"source":"1,3"
+			}
+		],
+		"ra":[
+			{
+				"value":"7:21:44.63",
+				"u_value":"floatdegrees",
+				"source":"2"
+			}
+		],
+		"visualmag":[
+			{
+				"value":"17.4",
+				"source":"2"
+			}
+		]
+	}
+}

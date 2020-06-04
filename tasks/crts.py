@@ -8,15 +8,15 @@ from bs4 import BeautifulSoup
 
 from decimal import Decimal
 
-from ..supernova import SUPERNOVA
+from astrocats.cataclysmic.cataclysmic import CATACLYSMIC
 
 
 def do_crts(catalog):
     """Import data from the Catalina Real-Time Transient Survey."""
     crtsnameerrors = ['2011ax']
     task_str = catalog.get_current_task_str()
-    folders = ['catalina', 'MLS', 'MLS', 'SSS']
-    files = ['AllSN.html', 'AllSN.arch.html', 'CRTSII_SN.html', 'AllSN.html']
+    folders = ['catalina', 'MLS', 'MLS']#, 'SSS']
+    files = ['CRTSII_BrightCV.html', 'AllSNCV.arch.html', 'CRTSII_CV.html', 'CRTSII_SNCV.html'] #cut because unable to find
     for fi, fold in enumerate(pbar(folders, task_str)):
         html = catalog.load_url(
             'http://nesssi.cacr.caltech.edu/' + fold + '/' + files[fi],
@@ -46,10 +46,10 @@ def do_crts(catalog):
                     ra = td.contents[0]
                 elif tdi == 2:
                     dec = td.contents[0]
-                elif tdi == (8 if files[fi] == 'CRTSII_SN.html' else 11):
+                elif tdi == (8 if files[fi] == 'CRTSII_CV.html' else 11):
                     lclink = td.find('a')['onclick']
                     lclink = lclink.split("'")[1]
-                elif tdi == (10 if files[fi] == 'CRTSII_SN.html' else 13):
+                elif tdi == (10 if files[fi] == 'CRTSII_CV.html' else 13):
                     aliases = re.sub('[()]', '', re.sub(
                         '<[^<]+?>', '', td.contents[-1].strip()))
                     aliases = [xx.strip('; ') for xx in list(
@@ -60,7 +60,7 @@ def do_crts(catalog):
             hostupper = False
             validaliases = []
             for ai, alias in enumerate(aliases):
-                if alias in ['SN', 'SDSS']:
+                if alias in ['CV', 'SDSS']:
                     continue
                 if alias in crtsnameerrors:
                     continue
@@ -79,7 +79,7 @@ def do_crts(catalog):
                     continue
                 if (is_number(alias[:4]) and alias[:2] == '20' and
                         len(alias) > 4):
-                    name = 'SN' + alias
+                    name = 'CV' + alias
                 if ((('asassn' in alias and len(alias) > 6) or
                      ('ptf' in alias and len(alias) > 3) or
                      ('ps1' in alias and len(alias) > 3) or
@@ -95,18 +95,18 @@ def do_crts(catalog):
             name, source = catalog.new_entry(
                 name, srcname='Catalina Sky Survey',
                 bibcode='2009ApJ...696..870D',
-                url='http://nesssi.cacr.caltech.edu/catalina/AllSN.html')
-            catalog.entries[name].add_quantity(SUPERNOVA.ALIAS, name, source)
+                url='http://nesssi.cacr.caltech.edu/catalina/AllCV.arch.html')
+            catalog.entries[name].add_quantity(CATACLYSMIC.ALIAS, name, source)
             for alias in validaliases:
                 catalog.entries[name].add_quantity(
-                    SUPERNOVA.ALIAS, alias, source)
+                    CATACLYSMIC.ALIAS, alias, source)
             catalog.entries[name].add_quantity(
-                SUPERNOVA.RA, ra.strip(), source, u_value='floatdegrees')
+                CATACLYSMIC.RA, ra.strip(), source, u_value='floatdegrees')
             catalog.entries[name].add_quantity(
-                SUPERNOVA.DEC, dec.strip(), source, u_value='floatdegrees')
-            if SUPERNOVA.CLAIMED_TYPE not in catalog.entries[name]:
+                CATACLYSMIC.DEC, dec.strip(), source, u_value='floatdegrees')
+            if CATACLYSMIC.CLAIMED_TYPE not in catalog.entries[name]:
                 catalog.entries[name].add_quantity(
-                    SUPERNOVA.CLAIMED_TYPE, 'Candidate', source)
+                    CATACLYSMIC.CLAIMED_TYPE, 'Candidate', source)
 
             if hostmag:
                 # 1.0 magnitude error based on Drake 2009 assertion that SN are
@@ -122,9 +122,13 @@ def do_crts(catalog):
                     PHOTOMETRY.UPPER_LIMIT: hostupper
                 }
                 catalog.entries[name].add_photometry(**photodict)
-
+            #added code because original failed. Cannot .split.strip.split a list.
+            clinkstrip = lclink.split('.')
+            clinkstrip = [i.rstrip('p') for i in clinkstrip]
+            clinkstrip = [i.split('/') for i in clinkstrip]
+            clinkstripstr = ''.join(str(e) for e in clinkstrip)
             fname2 = (catalog.get_current_task_repo() + '/' + fold + '/' +
-                      lclink.split('.')[-2].rstrip('p').split('/')[-1] +
+                      clinkstripstr +
                       '.html')
 
             html2 = catalog.load_url(lclink, fname2)

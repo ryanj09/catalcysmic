@@ -1,0 +1,115 @@
+{
+	"NSV 1440":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"NSV 1440",
+		"sources":[
+			{
+				"name":"2018yCat.1345....0G",
+				"bibcode":"2018yCat.1345....0G",
+				"reference":"Gaia Collaboration (2018)",
+				"alias":"1"
+			},
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"2"
+			},
+			{
+				"name":"ASAS-SN Transients",
+				"url":"http://www.astronomy.ohio-state.edu/~assassin/transients.html",
+				"alias":"3"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"4"
+			},
+			{
+				"name":"SIMBAD astronomical database",
+				"bibcode":"2000A&AS..143....9W",
+				"reference":"Wenger et al. (2000)",
+				"secondary":true,
+				"url":"http://simbad.u-strasbg.fr/",
+				"alias":"5"
+			}
+		],
+		"alias":[
+			{
+				"value":"NSV 1440",
+				"source":"3,5"
+			},
+			{
+				"value":"ASASSN-15sz",
+				"source":"5"
+			},
+			{
+				"value":"GALEX J035517.7-822612",
+				"source":"5"
+			},
+			{
+				"value":"2MASS J03554166-8225318",
+				"source":"5"
+			},
+			{
+				"value":"SV_ BV 1025",
+				"source":"5"
+			},
+			{
+				"value":"UCAC4 038-001966",
+				"source":"5"
+			},
+			{
+				"value":"Gaiadr2 4616023630455778304",
+				"source":"5"
+			}
+		],
+		"dec":[
+			{
+				"value":"-82:25:31.831",
+				"u_value":"degrees",
+				"source":"1,5"
+			},
+			{
+				"value":"-82:26:10.3",
+				"u_value":"floatdegrees",
+				"source":"3"
+			}
+		],
+		"discoverdate":[
+			{
+				"value":"2015/11/20.31",
+				"source":"3"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.0583",
+				"derived":true,
+				"e_value":"0.0022",
+				"source":"2,4"
+			}
+		],
+		"ra":[
+			{
+				"value":"03:55:41.5634",
+				"u_value":"hours",
+				"source":"1,5"
+			},
+			{
+				"value":"3:55:17.25",
+				"u_value":"floatdegrees",
+				"source":"3"
+			}
+		],
+		"visualmag":[
+			{
+				"value":"13.83",
+				"source":"3"
+			}
+		]
+	}
+}

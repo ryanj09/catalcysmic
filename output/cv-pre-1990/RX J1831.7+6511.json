@@ -1,0 +1,96 @@
+{
+	"RX J1831.7+6511":{
+		"schema":"https://github.com/astrocatalogs/supernovae/blob/124d9bd/SCHEMA.md",
+		"name":"RX J1831.7+6511",
+		"sources":[
+			{
+				"name":"2018yCat.1345....0G",
+				"bibcode":"2018yCat.1345....0G",
+				"reference":"Gaia Collaboration (2018)",
+				"alias":"1"
+			},
+			{
+				"name":"2016MNRAS.457.3396P",
+				"bibcode":"2016MNRAS.457.3396P",
+				"reference":"Pérez-Fernández et al. (2016)",
+				"alias":"2"
+			},
+			{
+				"name":"2011ApJ...737..103S",
+				"bibcode":"2011ApJ...737..103S",
+				"reference":"Schlafly & Finkbeiner (2011)",
+				"alias":"3"
+			},
+			{
+				"name":"The Open Cataclysmic Variable Catalog",
+				"bibcode":"2017ApJ...835...64G",
+				"reference":"Guillochon et al. (2017)",
+				"secondary":true,
+				"url":"https://sne.space",
+				"alias":"4"
+			},
+			{
+				"name":"SIMBAD astronomical database",
+				"bibcode":"2000A&AS..143....9W",
+				"reference":"Wenger et al. (2000)",
+				"secondary":true,
+				"url":"http://simbad.u-strasbg.fr/",
+				"alias":"5"
+			}
+		],
+		"alias":[
+			{
+				"value":"RX J1831.7+6511",
+				"source":"5"
+			},
+			{
+				"value":"GALEX J183144.5+651131",
+				"source":"5"
+			},
+			{
+				"value":"2MASS J18314453+6511306",
+				"source":"5"
+			},
+			{
+				"value":"1RXS J183144.5+651135",
+				"source":"5"
+			},
+			{
+				"value":"SDSSJ183144.53+651130.8",
+				"source":"5"
+			},
+			{
+				"value":"Gaiadr2 2256734632327338496",
+				"source":"5"
+			}
+		],
+		"claimedtype":[
+			{
+				"value":"sd+F/K",
+				"source":"2,5"
+			}
+		],
+		"dec":[
+			{
+				"value":"+65:11:30.660",
+				"u_value":"degrees",
+				"source":"1,5"
+			}
+		],
+		"ebv":[
+			{
+				"value":"0.0412",
+				"derived":true,
+				"e_value":"0.0018",
+				"source":"3,4"
+			}
+		],
+		"ra":[
+			{
+				"value":"18:31:44.5383",
+				"u_value":"hours",
+				"source":"1,5"
+			}
+		]
+	}
+}
